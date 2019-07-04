@@ -80,6 +80,15 @@
         </a>
       </li>
     </ul>
+    <h3>pages</h3>
+    <ul>
+      <li>
+        <router-link :to="{name: 'SayHi', query: {id: 1}}" >say_hi</router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'SayHi', params: {id: 12}}">say_hi/12</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 

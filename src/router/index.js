@@ -16,6 +16,11 @@ export default new Router({
       path: '/say_hi',
       name: 'SayHi',
       component: SayHi
+    },
+    {
+      path: '/say_hi/:id',
+      name: 'SayHi',
+      component: SayHi
     }
   ]
 })
