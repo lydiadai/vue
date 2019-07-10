@@ -2,6 +2,7 @@
   <div class="hi">
     {{ welcome }}
 
+    <my-logo title="sub_title"></my-logo>
     <div class="">
       <span>msg: {{ msg }}</span>
       <br/>
@@ -10,7 +11,7 @@
       <span>parmas: {{this.$route.params.id}}</span>
       <br/>
       <input type="text" @click="changeMsg('good')" />
-      <input type="text" v-model="msg" />
+      <input type="text" v-model.lazy.trim="msg" />
       <br/>
       <b @click="blogPage">to home page</b>
     </div>
@@ -18,6 +19,8 @@
 </template>
 
 <script>
+import MyLogo from '@/components/Logo'
+
 export default {
   data () {
     return {
@@ -26,12 +29,15 @@ export default {
     }
   },
   methods: {
-    changeMsg: function(name) {
+    changeMsg: function (name) {
       this.msg = name + this.$route.query.id
     },
     blogPage: function () {
       this.$router.push({name: 'HelloWorld'})
     }
+  },
+  components: {
+    MyLogo
   }
 }
 </script>
