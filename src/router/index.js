@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import SayHi from '@/components/SayHi'
+import detail from '@/components/detail'
+import blog from '@/components/blog'
 
 Vue.use(Router)
 
@@ -13,14 +14,14 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/say_hi',
-      name: 'SayHi',
-      component: SayHi
+      path: '/detail',
+      name: 'detail',
+      component: detail
     },
     {
-      path: '/say_hi/:id',
-      name: 'SayHi',
-      component: SayHi
+      path: '/blog',
+      name: 'blog',
+      component: blog
     }
   ]
 })
