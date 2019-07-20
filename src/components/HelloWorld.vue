@@ -4,11 +4,17 @@
     <router-link tag='div' class='user' :to="{path: '/detail', query:{user: 'lydia'}}">
       - query {{user}}
     </router-link>
-    <router-link tag='div' class='user' :to="{path: '/detail', name: 'detail', parmas: {user: 'lydia'}}">
+    <router-link tag='div' class='user' :to="{path: '/detail', name: 'detail', params: {user: 'lydia'}}">
       - params {{user}}
     </router-link>
     <div class='detail' @click="toShow('Lydia')">
       点我 查看具体信息
+    </div>
+
+    <input type='button' @click="changeValue()" value='通过控制代码修改my_value'/>
+
+    <div class='detail' @click="toForm()">
+      查看表单提交
     </div>
   </div>
 </template>
@@ -23,6 +29,16 @@ export default {
   methods: {
     toShow (name) {
       alert(name)
+    },
+    toForm () {
+      this.$router.push({path: `/form`})
+    },
+    changeValue (name) {
+      if (this.user === 'dailanyi') {
+        this.user = 'Lydia Dai'
+      } else {
+        this.user = 'dailanyi'
+      }
     }
   }
 }
