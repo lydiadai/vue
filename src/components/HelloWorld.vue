@@ -11,7 +11,7 @@
       点我 查看具体信息
     </div>
 
-    <input type='button' @click="changeValue()" value='通过控制代码修改my_value'/>
+    <input type='button' @click="changeValue()" value='通过控制代码修改用户名'/>
 
     <div class='detail' @click="toForm()">
       查看表单提交
